@@ -12,7 +12,7 @@ public class ParkingLot {
     }
 
     public Ticket park(Car car) {
-        if (cars.size() == size) {
+        if (isFull()) {
             return null;
         }
         cars.add(car);
@@ -25,5 +25,9 @@ public class ParkingLot {
         }
         cars.remove(ticket.getCar());
         return ticket.getCar();
+    }
+
+    public boolean isFull() {
+        return cars.size() == size;
     }
 }
