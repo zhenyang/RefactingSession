@@ -32,6 +32,10 @@ public class ParkingLot {
         return cars.size() == size;
     }
 
+    public double getEmptyRatio() {
+        return getLeftLotSize() / new Integer(size).doubleValue();
+    }
+
     public int getLeftLotSize() {
         return size - cars.size();
     }
