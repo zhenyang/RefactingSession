@@ -20,14 +20,19 @@ public class ParkingLot {
     }
 
     public Car unPark(Ticket ticket) {
-        if (!cars.contains(ticket.getCar())) {
+        Car carInTicket = ticket.getCar();
+        if (!cars.contains(carInTicket)) {
             return null;
         }
-        cars.remove(ticket.getCar());
-        return ticket.getCar();
+        cars.remove(carInTicket);
+        return carInTicket;
     }
 
     public boolean isFull() {
         return cars.size() == size;
+    }
+
+    public int getLeftLotSize() {
+        return size - cars.size();
     }
 }
