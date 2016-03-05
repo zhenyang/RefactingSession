@@ -2,12 +2,8 @@ package com.tw.parking;
 
 import java.util.List;
 
-public class ParkingDoctor extends ParkingBoy {
-    public ParkingDoctor(List<ParkingLot> parkingLots) {
-        super(parkingLots);
-    }
-
-    public Ticket park(Car car) {
+public class SmartestChooser implements Chooser{
+    public ParkingLot chooseParkingLot(List<ParkingLot> parkingLots) {
         ParkingLot parkingLot = parkingLots.get(0);
         for (int i = 1; i < parkingLots.size(); i++) {
             ParkingLot temp = parkingLots.get(i);
@@ -15,6 +11,6 @@ public class ParkingDoctor extends ParkingBoy {
                 parkingLot = temp;
             }
         }
-        return parkingLot.park(car);
+        return parkingLot;
     }
 }

@@ -15,7 +15,7 @@ public class ParkingDoctorTest {
         ParkingLot parkingLot2 = createParkingLot(1, 5);
         List<ParkingLot> parkingLots = Arrays.asList(parkingLot1, parkingLot2);
 
-        ParkingDoctor parkingBoy = new ParkingDoctor(parkingLots);
+        ParkingBoy parkingBoy = new ParkingBoy(parkingLots, new SmartestChooser());
         Car car = new Car();
         Ticket ticket = parkingBoy.park(car);
 
