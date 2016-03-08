@@ -1,5 +1,7 @@
 package com.tw.parking;
 
+import com.google.common.base.Strings;
+
 import java.util.List;
 
 public class ParkingManager implements Parkable {
@@ -29,4 +31,14 @@ public class ParkingManager implements Parkable {
         }
         return null;
     }
+
+    public String report(int level) {
+        StringBuilder result = new StringBuilder("");
+        result.append(Strings.repeat("--", level)).append("ParkingManager\n");
+        for (Parkable parkable : parkingBoy) {
+            result.append(parkable.report(level + 1));
+        }
+        return result.toString();
+    }
+
 }
