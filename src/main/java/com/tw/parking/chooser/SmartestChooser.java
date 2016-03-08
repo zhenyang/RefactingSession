@@ -1,8 +1,10 @@
-package com.tw.parking;
+package com.tw.parking.chooser;
+
+import com.tw.parking.ParkingLot;
 
 import java.util.List;
 
-public class SmartestChooser implements Chooser{
+public class SmartestChooser implements Chooser {
     public ParkingLot chooseParkingLot(List<ParkingLot> parkingLots) {
         ParkingLot parkingLot = parkingLots.get(0);
         for (int i = 1; i < parkingLots.size(); i++) {

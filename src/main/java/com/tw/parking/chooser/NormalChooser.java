@@ -1,4 +1,6 @@
-package com.tw.parking;
+package com.tw.parking.chooser;
+
+import com.tw.parking.ParkingLot;
 
 import java.util.List;
 

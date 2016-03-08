@@ -1,5 +1,6 @@
 package com.tw.parking;
 
+import com.tw.parking.chooser.SmartestChooser;
 import org.junit.Test;
 
 import java.util.Arrays;
@@ -15,7 +16,7 @@ public class ParkingDoctorTest {
         ParkingLot parkingLot2 = Helper.createParkingLot(1, 5);
         List<ParkingLot> parkingLots = Arrays.asList(parkingLot1, parkingLot2);
 
-        ParkingBoy parkingBoy = new ParkingBoy(parkingLots, new SmartestChooser());
+        Parkable parkingBoy = new ParkingBoy(parkingLots, new SmartestChooser());
         Car car = new Car();
         Ticket ticket = parkingBoy.park(car);
 

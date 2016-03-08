@@ -1,5 +1,6 @@
 package com.tw.parking;
 
+import com.tw.parking.chooser.NormalChooser;
 import org.junit.Test;
 
 import java.util.Arrays;
@@ -11,11 +12,11 @@ public class ParkingCeoTest {
     @Test
     public void testShouldManageParkingBoy() throws Exception {
         ParkingLot parkingLot = Helper.createParkingLot(0, 1);
-        ParkingBoy parkingBoy = new ParkingBoy(Arrays.asList(parkingLot), new NormalChooser());
+        Parkable parkingBoy = new ParkingBoy(Arrays.asList(parkingLot), new NormalChooser());
 
-        ParkingManager parkingManager = new ParkingManager(Arrays.asList(parkingBoy));
+        Parkable parkingManager = new ParkingManager(Arrays.asList(parkingBoy));
 
-        ParkingCeo parkingCeo = new ParkingCeo(Arrays.asList(parkingManager));
+        Parkable parkingCeo = new ParkingManager(Arrays.asList(parkingManager));
 
         Car car = new Car();
         Ticket ticket = parkingCeo.park(car);
