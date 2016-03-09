@@ -1,6 +1,5 @@
 package com.tw.parking;
 
-import com.google.common.base.Strings;
 import com.tw.parking.chooser.Chooser;
 
 import java.util.List;
@@ -31,13 +30,8 @@ public class ParkingBoy implements Parkable {
         return null;
     }
 
-    public String report(int level) {
-        StringBuilder result = new StringBuilder("");
-        result.append(Strings.repeat("--", level)).append("ParkingBoy\n");
-        for (ParkingLot parkingLot : parkingLots) {
-            result.append(parkingLot.report(level + 1));
-        }
-        return result.toString();
+    public void accept(Report report) {
+        report.visitParkingBoy(parkingLots);
     }
 
 }

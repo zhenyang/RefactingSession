@@ -47,7 +47,9 @@ public class ParkingManagerTest {
                 "------ParkingLot(1/7)\n" +
                 "------ParkingLot(2/8)\n" ;
 
-        assertThat(parkingManager2.report(0), is(result));
+        StringBuilder stringBuilder = new StringBuilder();
+        parkingManager2.accept(new Report(0, stringBuilder));
+        assertThat(stringBuilder.toString(), is(result));
     }
 
 }

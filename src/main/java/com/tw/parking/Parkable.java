@@ -5,5 +5,5 @@ public interface Parkable {
 
     Car unPark(Ticket ticket);
 
-    String report(int level);
+    void accept(Report report);
 }
